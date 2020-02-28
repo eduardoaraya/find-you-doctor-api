@@ -31,6 +31,10 @@ class Doctors extends Model {
     return this;
   }
 
+  get picture_url() {
+    return !this.picture ? '' : `http://localhost:3333/storage/app/${this.picture}`;
+  }
+
   async checkPassword(password) {
     const compare = await bcrypt.compare(password, this.password);
     return compare;

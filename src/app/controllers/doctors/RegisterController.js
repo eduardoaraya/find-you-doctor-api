@@ -105,7 +105,7 @@ class RegisterController {
         cpf,
         password,
         birthdate,
-        picture: (req.file && req.file.path) ? req.file.path : null,
+        picture: (req.file) ? req.file.filename : null,
         crm,
         phone,
         description,

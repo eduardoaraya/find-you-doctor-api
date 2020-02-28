@@ -47,13 +47,16 @@ class AuthController {
         });
       }
 
-      const { id, name, picture } = doctor;
+      const {
+        id, name, picture, picture_url,
+      } = doctor;
       return res.status(200).json({
         user: {
           id,
           name,
           email,
           picture,
+          picture_url,
         },
         token: authProvider.doctor.gen_token(doctor),
       });

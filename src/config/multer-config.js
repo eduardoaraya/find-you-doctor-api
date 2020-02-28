@@ -20,7 +20,7 @@ export default {
     filename: (req, file, cb) => {
       crypto.randomBytes(16, (err, hash) => {
         if (err) cb(err);
-        cb(null, `${hash.toString('hex')}-${file.originalname}`);
+        cb(null, `${hash.toString('hex')}${path.extname(file.originalname)}`);
       });
     },
   }),
